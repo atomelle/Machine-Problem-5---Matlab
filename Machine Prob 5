@@ -1,0 +1,18 @@
+n=[0:1:199];
+x=input('Input the equation for x(n): ');
+
+for c=1:1:200
+    if n(c)==0
+        y(c)=-1.5*x(c)+2*x(c+1)-0.5*x(c+2);
+    elseif n(c)<=198
+        y(c)=0.5*x(c+1)-0.5*x(c-1);
+    elseif n(c)==199
+        y(c)=1.5*x(c)-2*x(c-1)+0.5*x(c-2);
+    end
+end
+
+plot(n,x,'k');
+hold on;
+grid on;
+plot(n,y,'y');
+legend('x(n)','y(n)')
